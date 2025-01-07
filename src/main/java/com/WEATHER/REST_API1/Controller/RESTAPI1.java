@@ -44,6 +44,7 @@ public class RESTAPI1
         In B2B contexts,
         your controllers return this object instead of view file names
         */
+
         return new ResponseEntity<> (body, HttpStatus.OK);
     }
 
@@ -51,8 +52,10 @@ public class RESTAPI1
     public String MSG(@RequestParam(value = "name",required = false,defaultValue = "twan") String name)
     {
         //'required' attribute 'de-compulsifies' key-val pair typically required 2 access this endpoint
+
         String ss="Sup "+name+", wsg!";
         System.out.println ("*Controller 'MSG' was called*");
+
         return ss;
     }
 
@@ -63,6 +66,7 @@ public class RESTAPI1
         entity.setID (1);
         entity.setNAME ("Hakeem");
         entity.setSubscription ("Premium");
+
         return new ResponseEntity<> (entity,HttpStatus.OK);
     }
 
@@ -70,8 +74,11 @@ public class RESTAPI1
     public ResponseEntity<String>SAVE(@RequestBody Entity entity)
     {
         //This controller type receives JSON data and converts it in2 a Java entity via @RequestBody
+        //Requires an API tester like Talend or Postman
+
         System.out.println (entity);
         String ss="*DATA STORED*";
+
         return new ResponseEntity<> (ss,HttpStatus.OK);
     }
 }

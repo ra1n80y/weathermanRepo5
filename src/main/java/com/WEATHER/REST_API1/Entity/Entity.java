@@ -5,14 +5,13 @@ import lombok.Data;
 @Data
 public class Entity
 {
+    public Entity () {
+        System.out.println ("*Entity Invoked*");
+    }
+
     private Integer ID;
 
     private String NAME;
 
     private String Subscription;
-
-    public Entity()
-    {
-        System.out.println ("*Entity Invoked*");
-    }
 }
